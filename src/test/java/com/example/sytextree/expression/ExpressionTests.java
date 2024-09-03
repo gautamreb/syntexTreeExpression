@@ -15,6 +15,24 @@ public class ExpressionTests {
     }
 
     @Test
+    void testSubtraction() {
+        Expression left = new Operand(6);
+        Expression right = new Operand(2);
+        Expression  subtraction = new Subtraction(left, right);
+        ExpressionEvaluation evaluation = new ExpressionEvaluation();
+        assertEquals(4, subtraction.accept(evaluation));
+    }
+
+    @Test
+    void testMultiplication() {
+        Expression left = new Operand(6);
+        Expression right = new Operand(2);
+        Expression  multiplication = new Multiplication(left, right);
+        ExpressionEvaluation evaluation = new ExpressionEvaluation();
+        assertEquals(12, multiplication.accept(evaluation));
+    }
+
+    @Test
     void testDivisionByZero(){
         Expression left = new Operand(3);
         Expression right = new Operand(0);
